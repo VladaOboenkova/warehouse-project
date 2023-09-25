@@ -1,0 +1,29 @@
+<div class="form-area">
+  <h1>Выбор параметров склада</h1>
+  <form #whGenerationForm="ngForm" (ngSubmit)="onSubmit()">
+    
+    <div class="form-field">
+      <label>Введите количество стеллажей (1-10): </label>
+      <input type="number" name="numOfRacks" min="1" max="10" required [(ngModel)]="numOfRacks"> 
+    </div>
+
+    <div class="form-field">
+      <label>Введите количество полок (1-10): </label>
+      <input type="number" name="numOfShelves" min="1" max="10" required [(ngModel)]="numOfShelves"> 
+    </div>
+
+    <div class="form-field">
+      <label>Введите количество ячеек (1-10): </label>
+      <input type="number" name="numOfCells" min="1" max="10" required [(ngModel)]="numOfCells">
+    </div>
+
+    <button type="submit" [disabled]="whGenerationForm.form.invalid">Сгенерировать склад</button>
+  </form>
+</div>
+<app-warehouse *ngIf="showWarehouse" 
+               [numRacks]="numOfRacks"
+               [numShelves]="numOfShelves"
+               [numCells]="numOfCells"
+               [submitted]="submitted" 
+               (renderedEvent)="unSubmit()">
+</app-warehouse>

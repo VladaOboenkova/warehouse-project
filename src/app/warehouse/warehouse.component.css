@@ -1,0 +1,23 @@
+div {
+    background-color: #888686;
+    padding: 25px;
+    border: black solid 1px;   
+}
+
+.rack {
+    margin-bottom: 10px;
+    background-color: #deb887;
+}
+
+.shelf {
+    margin-top: 10px;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+
+.shelf-caption{
+    border: none;
+    background-color: transparent;
+}

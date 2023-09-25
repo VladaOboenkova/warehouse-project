@@ -1,0 +1,10 @@
+<div>
+    <div class="rack" *ngFor="let rack of racksAmount; let i = index">
+        {{ 'Стеллаж ' + (i + 1)}}
+            <div class="shelf" *ngFor="let shelf of shelvesAmount; let j = index">
+                <div class="shelf-caption">{{ 'Полка ' + (j + 1) }}</div>
+                <app-cell *ngFor="let cell of cellsAmount; let k = index" [cellIndex]="k" [submitted]="submitted">
+                </app-cell>
+            </div>
+    </div>
+</div>
